@@ -1,5 +1,5 @@
 name: pi3
-version: 16.04-0.5
+version: 16.04-0.5-kyle-1
 summary: Raspberry Pi 3 support package
 description: |
  Support files for booting Raspberry Pi
@@ -9,6 +9,10 @@ architectures:
 confinement: strict
 grade: stable
 parts:
+  hooks:
+    source: hooks
+    organize:
+      prepare-device: snap/hooks/prepare-device
   uboot:
     plugin: make
     source: git://git.denx.de/u-boot.git
